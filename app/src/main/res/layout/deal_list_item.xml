@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white_color"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/productLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="@dimen/margin_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/gray_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/productName"
+        style="@style/h1_title_text_style"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.55"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="8dp"
+        android:lines="2"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@+id/productLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/product_title" />
+
+    <View
+        android:id="@+id/titleSeparator"
+        app:layout_constraintWidth_percent="0.55"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:background="@color/gray_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/productLogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/productPrice"
+        style="@style/h1_title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_small"
+        tools:text="@string/product_price"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/productLogo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/shipOrStore"
+        style="@style/h3_description_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/productPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/ship_or_aisle_sample" />
+</androidx.constraintlayout.widget.ConstraintLayout>

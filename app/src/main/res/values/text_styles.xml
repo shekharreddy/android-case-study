@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="h1_title_text_style" >
+        <item name="android:textSize">@dimen/h1_title_text_size</item>
+        <item name="android:textColor">@color/gray_color</item>
+    </style>
+    <style name="h1_title_text_style_red" >
+        <item name="android:textSize">@dimen/h1_title_text_size_red</item>
+        <item name="android:textColor">@color/red_color</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+    <style name="h3_description_text_style" >
+        <item name="android:textSize">@dimen/h3_description_text_size</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

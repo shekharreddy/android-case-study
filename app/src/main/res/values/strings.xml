@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deal Browser</string>
+    <string name="product_details">Product Details</string>
+    <string name="title_activity_product_list_fragment">ProductListFragment</string>
+    <string name="title_activity_product_details">ProductDetailsActivity</string>
+    <string name="add_to_list">Add to List</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="regular_price">Reg: %s</string>
+    <string name="ship_or_aisle">Ship or %s</string>
+    <string name="error_msg">No Data found</string>
+
+
+</resources>

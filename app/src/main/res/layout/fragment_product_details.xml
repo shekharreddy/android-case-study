@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProductDetailsFragment"
+    tools:showIn="@layout/activity_product_details">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/productLogoView"
+        android:layout_width="@dimen/image_width_height"
+        android:layout_height="@dimen/image_width_height"
+        android:layout_margin="@dimen/margin_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dealPriceView"
+        style="@style/h1_title_text_style_red"
+        android:layout_marginLeft="@dimen/screen_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productLogoView"
+        tools:text="@string/product_price" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/regPriceView"
+        style="@style/h1_title_text_style"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dealPriceView"
+        app:layout_constraintBottom_toBottomOf="@+id/dealPriceView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/product_price" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/productTitleView"
+        android:layout_marginLeft="@dimen/screen_margin"
+        style="@style/h1_title_text_style"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dealPriceView"
+        tools:text="@string/product_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/productDescView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/h3_description_text_style"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:maxLines="6"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productTitleView"
+        tools:text="@string/product_description" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addToListView"
+        style="@style/gray_button_style"
+        android:layout_width="0dp"
+        android:gravity="center"
+        app:layout_constraintHorizontal_weight="0.5"
+        android:layout_height="50dp"
+        android:text="@string/add_to_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addToCartView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addToCartView"
+        style="@style/red_button_style"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="0.5"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/add_to_cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/addToListView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
