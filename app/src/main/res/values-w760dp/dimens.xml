@@ -3,4 +3,5 @@
     <dimen name="h3_description_text_size">17sp</dimen>
     <dimen name="h1_title_text_size_red">30sp</dimen>
     <dimen name="image_width_height">250dp</dimen>
+    <dimen name="button_height">60dp</dimen>
 </resources>
