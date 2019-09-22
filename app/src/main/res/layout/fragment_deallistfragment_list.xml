@@ -9,4 +9,4 @@
     android:layout_height="match_parent"
     app:layoutManager="LinearLayoutManager"
     tools:context=".ui.DealListFragment"
-    tools:listitem="@layout/activity_product_list_fragment" />
+    tools:listitem="@layout/deal_list_item" />

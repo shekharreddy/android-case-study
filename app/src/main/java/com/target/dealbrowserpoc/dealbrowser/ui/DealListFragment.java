@@ -113,8 +113,10 @@ public class DealListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_deallistfragment_list, container, false);
         dealListRecyclerView = (RecyclerView) view;
+        dealListAdapter = new DealsRecyclerViewAdapter(mListener);
         gridDecoration = new RecyclerViewListDecoration(getContext().getResources().getDimensionPixelSize(R.dimen.list_item_separator), VIEW_TYPE_GRID);
         listDecoration = new RecyclerViewListDecoration(getContext().getResources().getDimensionPixelSize(R.dimen.list_item_separator), VIEW_TYPE_LIST);
+        dealListRecyclerView.setAdapter(dealListAdapter);
         dealListRecyclerView.addItemDecoration(listDecoration);
         dealListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
@@ -134,8 +136,7 @@ public class DealListFragment extends Fragment {
      * @param products
      */
     private void updateDealsList(@Nullable List<DealItem> products){
-        dealListAdapter = new DealsRecyclerViewAdapter(products, mListener);
-        dealListRecyclerView.setAdapter(dealListAdapter);
+        dealListAdapter.setProducts(products);
     }
 
     private void showError(String errorMessage){
@@ -205,6 +206,6 @@ public class DealListFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(DealItem item);
+        void onListFragmentInteraction(DealItem item, int position);
     }
 }

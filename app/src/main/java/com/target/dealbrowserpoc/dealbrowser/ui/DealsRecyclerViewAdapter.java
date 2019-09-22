@@ -19,6 +19,7 @@ import com.target.dealbrowserpoc.dealbrowser.deals.DealItem;
 import com.target.dealbrowserpoc.dealbrowser.imagedownloader.GlideImageDownloader;
 import com.target.dealbrowserpoc.dealbrowser.ui.DealListFragment.OnListFragmentInteractionListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,15 +28,18 @@ import java.util.List;
  */
 public class DealsRecyclerViewAdapter extends RecyclerView.Adapter<DealsRecyclerViewAdapter.ListGridViewHolder> {
 
-    private final @Nullable List<DealItem> mProducts;
+    private @Nullable List<DealItem> mProducts = new ArrayList<>();
     private final OnListFragmentInteractionListener mListener;
     private int currentViewType;
     public static final int VIEW_TYPE_LIST = 0;
     public static final int VIEW_TYPE_GRID = 1;
 
-    public DealsRecyclerViewAdapter(@Nullable List<DealItem> products, OnListFragmentInteractionListener listener) {
-        mProducts = products;
+    public DealsRecyclerViewAdapter(OnListFragmentInteractionListener listener) {
         mListener = listener;
+    }
+
+    public void setProducts(@Nullable List<DealItem> products){
+        mProducts = products;
     }
 
     @Override
@@ -76,7 +80,7 @@ public class DealsRecyclerViewAdapter extends RecyclerView.Adapter<DealsRecycler
     }
 
     @Override
-    public void onBindViewHolder(final ListGridViewHolder holder, int position) {
+    public void onBindViewHolder(final ListGridViewHolder holder, final int position) {
         DealItem dealItem = mProducts.get(position);
         holder.mItem = mProducts.get(position);
         holder.mProductNameView.setText(dealItem.getTitle());
@@ -92,7 +96,7 @@ public class DealsRecyclerViewAdapter extends RecyclerView.Adapter<DealsRecycler
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    mListener.onListFragmentInteraction(holder.mItem, position);
                 }
             }
         });
