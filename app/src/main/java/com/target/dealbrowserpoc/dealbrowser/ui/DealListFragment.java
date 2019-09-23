@@ -29,6 +29,7 @@ import com.target.dealbrowserpoc.dealbrowser.deals.DealItem;
 import com.target.dealbrowserpoc.dealbrowser.mvvm.DealListViewModel;
 import com.target.dealbrowserpoc.dealbrowser.utils.RecyclerViewListDecoration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.target.dealbrowserpoc.dealbrowser.ui.DealsRecyclerViewAdapter.VIEW_TYPE_GRID;
@@ -174,6 +175,7 @@ public class DealListFragment extends Fragment {
             @Override
             public void onChanged(String errorMessage) {
                 showError(errorMessage);
+
             }
         });
     }

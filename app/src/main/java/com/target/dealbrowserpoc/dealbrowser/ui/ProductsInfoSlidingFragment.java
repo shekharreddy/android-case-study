@@ -15,7 +15,6 @@ import com.target.dealbrowserpoc.dealbrowser.utils.ViewPagerTransformer;
 
 
 /**
- * @author shekharreddy
  * Fragment to show Product details using viewpager adapter.
  */
 public class ProductsInfoSlidingFragment extends Fragment {
