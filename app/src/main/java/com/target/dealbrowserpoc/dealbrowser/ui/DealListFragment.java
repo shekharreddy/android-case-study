@@ -154,7 +154,7 @@ public class DealListFragment extends Fragment {
     // Observe API response with ViewModel to receive products info.
     private void observeViewModel(DealListViewModel viewModel) {
         // Update the list when the data changes
-        viewModel.getDealsListObservable().observe(this, new Observer<List<DealItem>>() {
+        viewModel.getDealsListObservable().observe(getViewLifecycleOwner(), new Observer<List<DealItem>>() {
             @Override
             public void onChanged(@Nullable List<DealItem> products) {
                 if (products != null && !products.isEmpty()) {
